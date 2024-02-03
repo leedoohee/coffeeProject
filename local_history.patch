@@ -1,0 +1,28 @@
+Index: coffeeProject/coffeeStore/coffeeAdmin/templates/detail.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/coffeeProject/coffeeStore/coffeeAdmin/templates/detail.html b/coffeeProject/coffeeStore/coffeeAdmin/templates/detail.html
+--- a/coffeeProject/coffeeStore/coffeeAdmin/templates/detail.html	
++++ b/coffeeProject/coffeeStore/coffeeAdmin/templates/detail.html	(date 1706946921765)
+@@ -164,7 +164,9 @@
+             type: "POST",
+             data: formData,
+             success: function(response) {
+-                console.log(response);
++                if(response.code === 200) {
++                    window.location.href = `/list`;
++                }
+             }
+         });
+     }
+@@ -175,7 +177,7 @@
+             type: "DELETE",
+             success: function(response) {
+                 if(response.code === 200) {
+-
++                    window.location.href = `/list`;
+                 }
+             }
+         });
